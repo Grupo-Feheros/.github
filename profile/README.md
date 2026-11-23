@@ -60,6 +60,14 @@ flowchart TB
 | 🚢 **Importação** | [`Feheros-Importacao`](https://github.com/Grupo-Feheros/Feheros-Importacao) | importacao.grupofeheros.com.br | Processos de importação: câmbio, FINIMP, impostos, custo real, payback e leitura de PDF |
 | 📦 **Controle de Estoque** | [`Feheros-Estoque`](https://github.com/Grupo-Feheros/Feheros-Estoque) | estoque.grupofeheros.com.br | Contagens com leitor de código de barras, conferência, fechamento quinzenal, ajustes no Tiny |
 | ↩️ **Devoluções** | [`Feheros-Devolucoes`](https://github.com/Grupo-Feheros/Feheros-Devolucoes) | devolucoes.grupofeheros.com.br | Devoluções, Full, mimos e transferências, com fotos, vídeos, disputas e arquivamento |
+| 📊 **Gestão à Vista** | [`Feheros-Gestao-a-Vista`](https://github.com/Grupo-Feheros/Feheros-Gestao-a-Vista) | gestao-a-vista.grupofeheros.com.br | Vendas por canal, metas, projeção, produtos, clientes e indicadores (pedidos do Tiny) |
+| ✅ **Gestão Interna** | [`Feheros-Gestao-Interna`](https://github.com/Grupo-Feheros/Feheros-Gestao-Interna) | gestao-interna.grupofeheros.com.br | Tarefas, projetos, OKRs, campanhas, calendários e diário de bordo |
+| 🧭 **Atlas** | [`Feheros-Atlas`](https://github.com/Grupo-Feheros/Feheros-Atlas) | atlas.grupofeheros.com.br | Supply chain: estoque, reposição, ordens de compra e envios ao Full |
+| 🪐 **Órbita** | [`Feheros-Orbita`](https://github.com/Grupo-Feheros/Feheros-Orbita) | orbita.grupofeheros.com.br | Análises a partir das planilhas da empresa |
+| 🏆 **Liga Bravatti** | [`Feheros-Liga`](https://github.com/Grupo-Feheros/Feheros-Liga) | liga.grupofeheros.com.br | Programa de afiliados (vendas Yever) |
+| 🎡 **Roleta** | [`Feheros-Roleta`](https://github.com/Grupo-Feheros/Feheros-Roleta) | roleta.grupofeheros.com.br | Roleta de prêmios para clientes (página pública + admin pelo portal) |
+| 📘 **Bravatti Docs** | [`Feheros-Bravatti-Docs`](https://github.com/Grupo-Feheros/Feheros-Bravatti-Docs) | bravatti-docs.grupofeheros.com.br | Documentação interna da marca |
+| 🔗 **Linktree / LP Bravia** | — | linktree.* · lp-bravia.* | Páginas estáticas |
 | 📡 **Monitor** | [`Monitor-Feheros`](https://github.com/Grupo-Feheros/Monitor-Feheros) | — | Ferramentas do monitoramento |
 
 > ℹ️ **Importação e Gestão Financeira usam o mesmo código.** O sistema escolhe o menu pelo endereço em que foi aberto, e cada commit vai para os dois repositórios.
@@ -186,6 +194,7 @@ flowchart LR
 | a cada **10 min** | Painel: lembretes dos afazeres (seg a sex, 7h às 16h40) |
 | a cada **20 min** | Monitor: verifica todos os sistemas e manda push para o Painel |
 | a cada **30 min** | Gestão Financeira: Tiny (contas, saldos, notas) e backup do dia · Devoluções: integrações, arquivamento e backup do dia |
+| a cada **1 min** | Gestão à Vista: executor de rotinas (pedidos do Tiny a cada 5 min, status, estoque, kits, marcas, análise) |
 | **03:30** todo dia | Backup completo no servidor: banco + `privado/` de cada sistema |
 
 ---
