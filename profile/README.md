@@ -31,7 +31,7 @@ flowchart TB
         P[🏠 Portal<br/>grupofeheros.com.br<br/><i>login único · setores · perfis</i>]
         PN[📱 Painel Feheros<br/>/painel · PWA + APK<br/><i>status · push · afazeres</i>]
         GF[💰 Gestão Financeira<br/>caixa.*]
-        IM[🚢 Importação<br/>importacao.*]
+        IM[🚢 Central de Inteligência de Importação<br/>importacao.*]
         ES[📦 Controle de Estoque<br/>estoque.*]
         DV[↩️ Devoluções<br/>devolucoes.*]
     end
@@ -57,7 +57,7 @@ flowchart TB
 |---|---|---|---|
 | 🏠 **Portal** | [`Feheros-Portal`](https://github.com/Grupo-Feheros/Feheros-Portal) | grupofeheros.com.br | Porta de entrada: login, setores, permissões, perfis com foto, monitor e Painel |
 | 💰 **Gestão Financeira** | [`Feheros-Caixa`](https://github.com/Grupo-Feheros/Feheros-Caixa) | caixa.grupofeheros.com.br | Fluxo de caixa, contas a pagar e receber, APR/DFC, projeções, empréstimos, folha |
-| 🚢 **Importação** | [`Feheros-Importacao`](https://github.com/Grupo-Feheros/Feheros-Importacao) | importacao.grupofeheros.com.br | Processos de importação: câmbio, FINIMP, impostos, custo real, payback e leitura de PDF |
+| 🚢 **Central de Inteligência de Importação** | [`Feheros-Importacao`](https://github.com/Grupo-Feheros/Feheros-Importacao) | importacao.grupofeheros.com.br | Processos de importação: câmbio, FINIMP, impostos, custo real, payback e leitura de PDF |
 | 📦 **Controle de Estoque** | [`Feheros-Estoque`](https://github.com/Grupo-Feheros/Feheros-Estoque) | estoque.grupofeheros.com.br | Contagens com leitor de código de barras, conferência, fechamento quinzenal, ajustes no Tiny |
 | ↩️ **Devoluções** | [`Feheros-Devolucoes`](https://github.com/Grupo-Feheros/Feheros-Devolucoes) | devolucoes.grupofeheros.com.br | Devoluções, Full, mimos e transferências, com fotos, vídeos, disputas e arquivamento |
 | 📊 **Gestão à Vista** | [`Feheros-Gestao-a-Vista`](https://github.com/Grupo-Feheros/Feheros-Gestao-a-Vista) | gestao-a-vista.grupofeheros.com.br | Vendas por canal, metas, projeção, produtos, clientes e indicadores (pedidos do Tiny) |
@@ -70,7 +70,7 @@ flowchart TB
 | 🔗 **Linktree / LP Bravia** | — | linktree.* · lp-bravia.* | Páginas estáticas |
 | 📡 **Monitor** | [`Monitor-Feheros`](https://github.com/Grupo-Feheros/Monitor-Feheros) | — | Ferramentas do monitoramento |
 
-> ℹ️ **Importação e Gestão Financeira usam o mesmo código.** O sistema escolhe o menu pelo endereço em que foi aberto, e cada commit vai para os dois repositórios.
+> ℹ️ **Central de Inteligência de Importação e Gestão Financeira usam o mesmo código.** O sistema escolhe o menu pelo endereço em que foi aberto, e cada commit vai para os dois repositórios.
 
 ---
 
