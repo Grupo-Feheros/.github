@@ -122,12 +122,12 @@ sequenceDiagram
     P-->>U: redireciona com o bilhete
     U->>S: ?sso=bilhete
     S->>S: confere assinatura (sso.key) e se é de uso único
-    S->>S: cria/atualiza o usuário com as permissões do Portal
+    S->>S: confere o acesso no Portal (e de novo a cada chamada)
     S-->>U: sessão de 12 h ✅
 ```
 
 - **Setores:** Administrador, Devoluções, Gestão Financeira, Estoque, Importação e outros que o admin criar. Cada setor define o que se pode fazer em cada sistema.
-- **Quem manda nas permissões é o Portal.** Elas são gravadas de novo a cada entrada, e cada usuário pode receber permissões personalizadas.
+- **O Portal é a central.** Usuários, acessos e permissões só existem lá: nenhum sistema tem tela de usuários nem login com senha. O acesso é conferido a cada chamada, então tirar alguém no Portal vale na hora, inclusive pelo link direto.
 - **Fotos de perfil:** ficam no Portal e aparecem em todos os sistemas por um link assinado.
 
 ---
