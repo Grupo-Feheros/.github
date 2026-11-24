@@ -61,7 +61,7 @@ flowchart TB
 | 📦 **Controle de Estoque** | [`Feheros-Estoque`](https://github.com/Grupo-Feheros/Feheros-Estoque) | estoque.grupofeheros.com.br | Contagens com leitor de código de barras, conferência, fechamento quinzenal, ajustes no Tiny |
 | ↩️ **Devoluções** | [`Feheros-Devolucoes`](https://github.com/Grupo-Feheros/Feheros-Devolucoes) | devolucoes.grupofeheros.com.br | Devoluções, Full, mimos e transferências, com fotos, vídeos, disputas e arquivamento |
 | 📊 **Gestão à Vista** | [`Feheros-Gestao-a-Vista`](https://github.com/Grupo-Feheros/Feheros-Gestao-a-Vista) | gestao-a-vista.grupofeheros.com.br | Vendas por canal, metas, projeção, produtos, clientes e indicadores (pedidos do Tiny) |
-| ✅ **Gestão Interna** | [`Feheros-Gestao-Interna`](https://github.com/Grupo-Feheros/Feheros-Gestao-Interna) | gestao-interna.grupofeheros.com.br | Tarefas, projetos, OKRs, campanhas, calendários e diário de bordo |
+| ✅ **Cronos** | [`Feheros-Gestao-Interna`](https://github.com/Grupo-Feheros/Feheros-Gestao-Interna) | cronos.grupofeheros.com.br | Tarefas, projetos, OKRs, campanhas, calendários e diário de bordo |
 | 🧭 **Atlas** | [`Feheros-Atlas`](https://github.com/Grupo-Feheros/Feheros-Atlas) | atlas.grupofeheros.com.br | Supply chain: estoque, reposição, ordens de compra e envios ao Full |
 | 🪐 **Órbita** | [`Feheros-Orbita`](https://github.com/Grupo-Feheros/Feheros-Orbita) | orbita.grupofeheros.com.br | Análises a partir das planilhas da empresa |
 | 🏆 **Liga Bravatti** | [`Feheros-Liga`](https://github.com/Grupo-Feheros/Feheros-Liga) | liga.grupofeheros.com.br | Programa de afiliados (vendas Yever) |
@@ -195,6 +195,7 @@ flowchart LR
 | a cada **20 min** | Monitor: verifica todos os sistemas e manda push para o Painel |
 | a cada **30 min** | Gestão Financeira: Tiny (contas, saldos, notas) e backup do dia · Devoluções: integrações, arquivamento e backup do dia |
 | a cada **1 min** | Gestão à Vista: executor de rotinas (pedidos do Tiny a cada 5 min, status, estoque, kits, marcas, análise) |
+| a cada **30 min**, a partir das 04:00 | Atlas: sincroniza com o Tiny em etapas e gera o painel, até concluir a rodada do dia |
 | **03:30** todo dia | Backup completo no servidor: banco + `privado/` de cada sistema |
 
 ---
