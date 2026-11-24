@@ -67,7 +67,6 @@ flowchart TB
 | 🏆 **Liga Bravatti** | [`Feheros-Liga`](https://github.com/Grupo-Feheros/Feheros-Liga) | liga.grupofeheros.com.br | Programa de afiliados (vendas Yever) |
 | 🎡 **Roleta** | [`Feheros-Roleta`](https://github.com/Grupo-Feheros/Feheros-Roleta) | roleta.grupofeheros.com.br | Roleta de prêmios para clientes (página pública + admin pelo portal) |
 | 📘 **Bravatti Docs** | [`Feheros-Bravatti-Docs`](https://github.com/Grupo-Feheros/Feheros-Bravatti-Docs) | bravatti-docs.grupofeheros.com.br | Documentação interna da marca |
-| 🔗 **Linktree / LP Bravia** | — | linktree.* · lp-bravia.* | Páginas estáticas |
 | 📡 **Monitor** | [`Monitor-Feheros`](https://github.com/Grupo-Feheros/Monitor-Feheros) | — | Ferramentas do monitoramento |
 
 > ℹ️ **Central de Inteligência de Importação e Gestão Financeira usam o mesmo código.** O sistema escolhe o menu pelo endereço em que foi aberto, e cada commit vai para os dois repositórios.
