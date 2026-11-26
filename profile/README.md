@@ -42,6 +42,7 @@ flowchart TB
     GF <-- API v2 + v3 --> TINY[(🧾 Tiny / Olist ERP)]
     ES <-- API v2 + v3 --> TINY
     DV <-- OAuth · webhooks --> MK[(🛒 Marketplaces<br/>Mercado Livre · Shopee · Amazon<br/>Magalu · Shein · TikTok Shop · Shopify)]
+    GF <-- repasses + saldos --> MK
 
     classDef sis fill:#6c2a3b,color:#fff,stroke:#322b2b
     classDef ext fill:#f4f0ec,color:#322b2b,stroke:#6c2a3b
@@ -183,6 +184,23 @@ flowchart LR
 - **Vínculo com registros manuais:** se a equipe já cadastrou a devolução, a integração vincula pelo número do pedido em vez de duplicar.
 - **O que a integração nunca altera:** conferência, condição, destino, fotos do CD e observações. Isso é trabalho da equipe.
 
+### 🛒 Marketplaces → Gestão Financeira
+
+Os **7 conectores estão programados** (mesmo passo a passo: chaves → Autorizar → Testar → Ativar). Cada um traz os **repasses** (vendas, comissões, tarifas, frete e estornos, ligados ao marketplace e baixados quando o dinheiro cai) e o **saldo** na plataforma.
+
+| Plataforma | Repasses | Saldo |
+|---|---|---|
+| Mercado Livre / Mercado Pago | 1 por dia de liberação (`payments/search`) | disponível → conta **Mercado Pago** · a liberar |
+| Shopee | 1 por dia de crédito na carteira + taxas por pedido | carteira |
+| Amazon | grupos de liquidação (Finances v0) | a liberar (grupos abertos) |
+| TikTok Shop | extratos diários + pagamentos | a liberar (extratos não pagos) |
+| Shopify | payouts do Shopify Payments | a liberar |
+| Magalu · Shein | endereço da API financeira colado do portal | se o portal tiver |
+
+- **Tempo real:** o saldo é relido a cada webhook (máx. 1x/30 s), ao abrir *Contas e saldos* (máx. 1x/2 min) e a cada sincronização.
+- **Só o "disponível" entra em conta** (a escolhida na integração; o Tiny deixa de mexer nela). O "a liberar" já aparece no fluxo como repasse a receber.
+- **Redirect URI único:** `https://caixa.grupofeheros.com.br/api/autorizar.php`
+
 ---
 
 ## ⏱️ Tarefas automáticas (cron da Hostinger)
@@ -190,9 +208,9 @@ flowchart LR
 | Quando | O quê |
 |---|---|
 | a cada **5 min** | Estoque: sincroniza produtos e saldos com o Tiny |
-| a cada **10 min** | Painel: lembretes dos afazeres (seg a sex, 7h às 16h40) |
+| a cada **10 min** | Painel: lembretes dos afazeres (seg a sex, 7h às 16h40) · Gestão Financeira: marketplaces (repasses e saldos), Tiny (contas, saldos, notas) e backup do dia |
 | a cada **20 min** | Monitor: verifica todos os sistemas e manda push para o Painel |
-| a cada **30 min** | Gestão Financeira: Tiny (contas, saldos, notas) e backup do dia · Devoluções: integrações, arquivamento e backup do dia |
+| a cada **30 min** | Devoluções: integrações, arquivamento e backup do dia |
 | a cada **1 min** | Gestão à Vista: executor de rotinas (pedidos do Tiny a cada 5 min, status, estoque, kits, marcas, análise) |
 | a cada **30 min**, a partir das 04:00 | Atlas: sincroniza com o Tiny em etapas e gera o painel, até concluir a rodada do dia |
 | **03:30** todo dia | Backup completo no servidor: banco + `privado/` de cada sistema |
